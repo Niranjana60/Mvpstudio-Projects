@@ -35,7 +35,7 @@ namespace Mars_Automation_Project.Featurefiles
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Featurefiles", "LoginPage", "\tUser is able to successfully Login", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Featurefiles", "LoginPage", "\tUser is able to successfully Login with valid credentials", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,10 +74,10 @@ namespace Mars_Automation_Project.Featurefiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("user is able to do Login succesfully")]
+        [NUnit.Framework.DescriptionAttribute("user is able to do Login succesfully with valid credentials")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("pepparoy@gmail.com", "Peppa@2021", null)]
-        public virtual void UserIsAbleToDoLoginSuccesfully(string emailAddress, string password, string[] exampleTags)
+        public virtual void UserIsAbleToDoLoginSuccesfullyWithValidCredentials(string emailAddress, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -89,7 +89,7 @@ namespace Mars_Automation_Project.Featurefiles
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Email address", emailAddress);
             argumentsOfScenario.Add("Password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user is able to do Login succesfully", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("user is able to do Login succesfully with valid credentials", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

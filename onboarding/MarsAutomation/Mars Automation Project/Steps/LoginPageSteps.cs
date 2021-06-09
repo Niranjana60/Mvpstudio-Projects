@@ -1,4 +1,5 @@
 ﻿using Mars_Automation_Project.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -49,7 +50,11 @@ namespace Mars_Automation_Project.Steps
         [Then(@"I should be logged in successfully")]
         public void ThenIShouldBeLoggedInSuccessfully()
         {
-            loginPage.ValidateLogin();
+            
+            bool isLoggedin = loginPage.ValidateLogin();
+            Assert.IsTrue(isLoggedin);
+           
+            
             Console.WriteLine("I should be logged in successfully");
         }
 

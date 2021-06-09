@@ -42,8 +42,15 @@ namespace Mars_Automation_Project.Steps
         [When(@"I click on Add New button")]
         public void WhenIClickOnAddNewButton()
         {
-            profilePage.ClickOnAddNewButton();
+            profilePage.ClickOnAddNewButtonBelowLanguageTab();
             Console.WriteLine("I click on Add New button");
+        }
+
+        [When(@"I click on Add New button below Skills tab")]
+        public void WhenIClickOnAddNewButtonBelowSkillsTab()
+        {
+            profilePage.ClickOnAddNewButtonBelowSkillsTab();
+            Console.WriteLine("I click on Add New button below skills tab");
         }
 
         [When(@"I Add (.*) and (.*) on Languages tab")]
@@ -70,22 +77,31 @@ namespace Mars_Automation_Project.Steps
             profilePage.ClickOnAddButton();
             Console.WriteLine("I click on Add button");
         }
-        
-       
-      
-        [Then(@"Validate that Language is added")]
-        public void ThenValidateThatLanguageIsAdded()
+
+
+
+  
+
+        [Then(@"Validate that (.*) and (.*) are added")]
+        public void ThenValidateThatLanguageAndLevelAreAdded(string language, string level)
         {
-            profilePage.ValidateLanguageIsAdded();
-            Console.WriteLine("Validate that Language is added");
+            bool isLanguageAdded = profilePage.ValidateLanguageIsAdded(language);
+            Assert.IsTrue(isLanguageAdded);
+            bool isLanguageLevelAdded = profilePage.ValidateLanguageLevelIsAdded(level);
+            Assert.IsTrue(isLanguageLevelAdded);
         }
 
-        [Then(@"Validate that Skill is added")]
-        public void ThenValidateThatSkillIsAdded()
+        [Then(@"Validate that (.*) and (.*) are added\.")]
+        public void ThenValidateThatSkillAndSkillLevelAreAdded_(string skill, string level)
         {
-            
-            Console.WriteLine("Validate that Skill is added");
+           bool isSkillAdded = profilePage.ValidateSkillIsAdded(skill);
+            Assert.IsTrue(isSkillAdded);
+            bool isSkillLevelAdded = profilePage.ValidateSkillLevelIsAdded(level);
+            Assert.IsTrue(isSkillLevelAdded);
         }
+
+
+        
 
         [Given(@"I click on Skills tab")]
         public void GivenIClickOnSkillsTab()
