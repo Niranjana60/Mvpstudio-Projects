@@ -75,12 +75,12 @@ namespace Mars_Automation_Project.Featurefiles
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("user is able to do Login succesfully with valid credentials")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("automated")]
         [NUnit.Framework.TestCaseAttribute("pepparoy@gmail.com", "Peppa@2021", null)]
         public virtual void UserIsAbleToDoLoginSuccesfullyWithValidCredentials(string emailAddress, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "automated"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

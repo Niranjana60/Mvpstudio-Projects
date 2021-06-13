@@ -45,6 +45,8 @@ namespace Mars_Automation_Project.Pages
         //Click on Login
         public void ClickLoginButton()
         {
+
+            Wait.ElementExists(driver, "X Path", "//BUTTON[@class='fluid ui teal button'][text()='Login']", 2);
             IWebElement loginButton = driver.FindElement(By.XPath("//BUTTON[@class='fluid ui teal button'][text()='Login']"));
             loginButton.Click();
         }
@@ -55,7 +57,7 @@ namespace Mars_Automation_Project.Pages
             Wait.ElementExists(driver, "XPath", "//body[1]/div[1]/div[1]/section[1]/div[1]/a[2]", 5);
             IWebElement profile = driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/section[1]/div[1]/a[2]"));
             String expectedtitle = "Profile";
-            String actualtitle = driver.Title;
+            String actualtitle = profile.Text;
             if (actualtitle == expectedtitle)
             {
                 Console.WriteLine("test passed");
