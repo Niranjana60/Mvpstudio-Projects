@@ -201,15 +201,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am able to enter Description")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmAbleToEnterDescription()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am able to enter Description", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 36
@@ -257,15 +253,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Error message displayed if description box is blank")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void ErrorMessageDisplayedIfDescriptionBoxIsBlank()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error message displayed if description box is blank", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 45
@@ -313,15 +305,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am able to enter upto 600 characters in Description  box")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmAbleToEnterUpto600CharactersInDescriptionBox()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am able to enter upto 600 characters in Description  box", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 54
@@ -369,15 +357,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am not able to enter more than 600 characters in Description  box")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmNotAbleToEnterMoreThan600CharactersInDescriptionBox()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am not able to enter more than 600 characters in Description  box", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 63
@@ -425,15 +409,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am not able to add language if cancel button is clicked")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmNotAbleToAddLanguageIfCancelButtonIsClicked()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am not able to add language if cancel button is clicked", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 72
@@ -480,15 +460,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am not able to add languages after 4 selection")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmNotAbleToAddLanguagesAfter4Selection()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am not able to add languages after 4 selection", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 81
@@ -529,15 +505,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Unable to add language by simply clicking Add button")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void UnableToAddLanguageBySimplyClickingAddButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unable to add language by simply clicking Add button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 88
@@ -587,15 +559,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The text box to enter language should disppear when cancel button is clicked")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void TheTextBoxToEnterLanguageShouldDisppearWhenCancelButtonIsClicked()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The text box to enter language should disppear when cancel button is clicked", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 98
@@ -645,15 +613,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I should not be able to Add skills after cancel button is clicked")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IShouldNotBeAbleToAddSkillsAfterCancelButtonIsClicked()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should not be able to Add skills after cancel button is clicked", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 108
@@ -703,15 +667,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am able to Add Education")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmAbleToAddEducation()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am able to Add Education", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 118
@@ -761,15 +721,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am not able to Add Education without entering all fields")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmNotAbleToAddEducationWithoutEnteringAllFields()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am not able to Add Education without entering all fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 128
@@ -819,15 +775,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("I am able to Add Certifications")]
-        [NUnit.Framework.CategoryAttribute("To")]
-        [NUnit.Framework.CategoryAttribute("be")]
-        [NUnit.Framework.CategoryAttribute("automated")]
+        [NUnit.Framework.CategoryAttribute("Tobeautomated")]
         public virtual void IAmAbleToAddCertifications()
         {
             string[] tagsOfScenario = new string[] {
-                    "To",
-                    "be",
-                    "automated"};
+                    "Tobeautomated"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I am able to Add Certifications", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 138
