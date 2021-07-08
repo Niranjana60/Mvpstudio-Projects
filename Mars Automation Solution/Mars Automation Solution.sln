@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mars Competition Task", "Mars Competition Task\Mars Competition Task.csproj", "{9727BE85-3482-4308-9EE0-DDDB823D20FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9727BE85-3482-4308-9EE0-DDDB823D20FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9727BE85-3482-4308-9EE0-DDDB823D20FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9727BE85-3482-4308-9EE0-DDDB823D20FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9727BE85-3482-4308-9EE0-DDDB823D20FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD0DB1EC-D017-4CAB-A545-0911B85A3085}
+	EndGlobalSection
+EndGlobal
