@@ -1,4 +1,5 @@
 ﻿using ExcelDataReader;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -22,10 +23,45 @@ namespace MarsFramework.Global
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(time);
 
         }
-        public static IWebElement WaitForElement(IWebDriver driver, By by, int timeOutinSeconds)
+        //public static IWebElement WaitForElement(IWebDriver driver, By by, int timeOutinSeconds)
+        //{
+        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutinSeconds));
+        //    return wait.Until(ExpectedConditions.ElementIsVisible(by));
+        //}
+
+        public static void ElementExists(String locator, string locatorValue, int seconds)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutinSeconds));
-            return (wait.Until(ExpectedConditions.ElementIsVisible(by)));
+
+            try
+            {
+                if (locator == "Id")
+                {
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id(locatorValue)));
+                }
+
+                if (locator == "XPath")
+                {
+                    Console.WriteLine(">>>>>>>>>> Adding Wait");
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(locatorValue)));
+                }
+
+                if (locator == "LinkText")
+                {
+                    Console.WriteLine(">>>>>>>>>> Adding Wait");
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.LinkText(locatorValue)));
+                }
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Assert.Fail("Test Failed waiting for element to exists", ex.Message);
+            }
         }
         #endregion
 

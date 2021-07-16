@@ -1,6 +1,6 @@
 ﻿using MarsFramework.Global;
 using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace MarsFramework.Pages
 {
@@ -8,7 +8,7 @@ namespace MarsFramework.Pages
     {
         public SignUp()
         {
-            PageFactory.InitElements(Global.GlobalDefinitions.driver, this);
+            SeleniumExtras.PageObjects.PageFactory.InitElements(Global.GlobalDefinitions.driver, this);
         }
 
         #region  Initialize Web Elements 

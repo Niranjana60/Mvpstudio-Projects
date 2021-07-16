@@ -1,17 +1,17 @@
 ﻿//using MarsFramework.Config;
+using Mars_Competition_Task.Pages;
 using MarsFramework.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 //using RelevantCodes.ExtentReports;
 using System;
-using static MarsFramework.Global.GlobalDefinitions;
 
 namespace MarsFramework.Global
 {
     class Base
     {
-        private static readonly int FIREFOX = 1;
+       // private static readonly int FIREFOX = 1;
         private static readonly int CHROME = 2;
         private static readonly bool IsLogin = true;
 
@@ -57,7 +57,7 @@ namespace MarsFramework.Global
             if (IsLogin)
             {
                 SignIn loginobj = new SignIn();
-                loginobj.LoginSteps();
+               loginobj.LoginSteps();
             }
             else
             {
