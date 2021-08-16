@@ -11,9 +11,10 @@ namespace MarsFramework.Global
 {
     class Base
     {
-       // private static readonly int FIREFOX = 1;
+        //private static readonly int FIREFOX = 1;
         private static readonly int CHROME = 2;
         private static readonly bool IsLogin = true;
+        // private static  bool canLogin = true;
 
         #region To access Path from resource file
 
@@ -49,25 +50,23 @@ namespace MarsFramework.Global
 
             #region Initialise Reports
 
-           /* extent = new ExtentReports(ReportPath, false, DisplayOrder.NewestFirst);
-            extent.LoadConfig(MarsResource.ReportXMLPath);*/
+            /* extent = new ExtentReports(ReportPath, false, DisplayOrder.NewestFirst);
+             extent.LoadConfig(MarsResource.ReportXMLPath);*/
 
             #endregion
-
+            // if (canLogin) {
             if (IsLogin)
             {
                 SignIn loginobj = new SignIn();
-               loginobj.LoginSteps();
+                loginobj.LoginSteps();
+                // canLogin = false;
             }
             else
             {
                 SignUp obj = new SignUp();
                 obj.register();
             }
-
         }
-
-
         [TearDown]
         public void TearDown()
         {
@@ -76,14 +75,19 @@ namespace MarsFramework.Global
             test.Log(LogStatus.Info, "Image example: " + img);
             // end test. (Reports)
             extent.EndTest(test);
-            // calling Flush writes everything to the log file (Reports)
+            / calling Flush writes everything to the log file (Reports)
             extent.Flush();*/
 
             // Close the driver :)            
             GlobalDefinitions.driver.Close();
-            GlobalDefinitions.driver.Quit();
-        }
-        #endregion
+            //GlobalDefinitions.driver.Quit();
+            //}
+            #endregion
 
+            ////}
+        }
     }
 }
+
+
+

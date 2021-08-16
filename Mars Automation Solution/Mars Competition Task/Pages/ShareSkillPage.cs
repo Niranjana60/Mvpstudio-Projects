@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using MarsFramework.Global;
 using NUnit.Framework;
@@ -9,6 +6,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using AutoItX3Lib;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Mars_Competition_Task.Pages
 {
     class ShareSkillPage
@@ -16,84 +16,98 @@ namespace Mars_Competition_Task.Pages
 
         public ShareSkillPage()
         {
-            PageFactory.InitElements(MarsFramework.Global.GlobalDefinitions.driver, this);
+            PageFactory.InitElements(GlobalDefinitions.driver, this);
         }
 
-        //Click on ShareSkill Button
+        //ShareSkill Button
         [FindsBy(How = How.LinkText, Using = "Share Skill")]
         private IWebElement ShareSkillButton { get; set; }
 
-        ////Enter the Title in textbox
-        //[FindsBy(How = How.Name, Using = "title")]
-        //private IWebElement Title { get; set; }
-        //div[text()
-        //Enter the Title in textbox
+
+        //Title 
         [FindsBy(How = How.XPath, Using = "/html/body/div/div/div[1]/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input")]
         private IWebElement Title { get; set; }
 
-        ////After Entering the TitleValue in textbox
-        //[FindsBy(How = How.XPath, Using = "//div[Contains(text()='Title is Entered']")]
-        //private IWebElement TitleValue { get; set; }
-        //After Entering the TitleValue in textbox
-        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Write a title to describe the service you provide']")]
-        private IWebElement TitleValue { get; set; }
-
-
-        //Enter the Description in textbox
+        //Description 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Please tell us about any hobbies, additional expertise, or anything else you’d like to add.']")]
         private IWebElement Description { get; set; }
 
-        //Click on Category Dropdown
+        //Category Dropdown
         [FindsBy(How = How.Name, Using = "categoryId")]
         private IWebElement CategoryDropDown { get; set; }
 
-        //Click on Category Dropdownvalue
-       // [FindsBy(How = How.XPath, Using = "//select/option[@value='Digital Marketing']")]
-       // private IWebElement CategoryDropDownValue { get; set; }
+        //Category 
+        [FindsBy(How = How.XPath, Using = "//select[@name='categoryId']")]
+        private IWebElement Category { get; set; }
 
-        //Click on SubCategory Dropdown
-        [FindsBy(How = How.Name, Using = "subcategoryId")]
-        private IWebElement SubCategoryDropDown { get; set; }
+        //Graphics and design
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[3]/div[2]/div/div[1]/select/option[2]")]
+        private IWebElement Categoryvalue { get; set; }
 
-        //Enter Tag names in textbox
-        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[4]/div[2]/div/div/div/div/input")]
+        //SubCategory Dropdown
+        [FindsBy(How = How.XPath, Using = "//select[@name='subcategoryId']")]
+        private IWebElement SubCategory { get; set; }
+        //Book & Album covers
+        [FindsBy(How = How.XPath, Using = "/html/body/div/div/div[1]/div[2]/div/form/div[3]/div[2]/div/div[2]/div[1]/select/option[3]")]
+        private IWebElement SubCategoryvalue { get; set; }
+
+        //Tag names in textbox
+        [FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[contains(@class,'ui container')]/div[contains(@class,'listing')]/form[contains(@class,'ui form')]/div[contains(@class,'tooltip-target ui grid')]/div[contains(@class,'twelve wide column')]/div[contains(@class,'')]/div[contains(@class,'ReactTags__tags')]/div[contains(@class,'ReactTags__selected')]/div[contains(@class,'ReactTags__tagInput')]/input[1]")]
         private IWebElement Tags { get; set; }
 
-        //Select the Service type
+        //Service type
         [FindsBy(How = How.XPath, Using = "/html/body/div/div/div[1]/div[2]/div/form/div[5]/div[2]/div[1]/div[2]/div/input")]
         private IWebElement ServiceTypeOptions { get; set; }
-        //Select the onoffserviceradiobutton
+        //onoffserviceradiobutton
         [FindsBy(How = How.XPath, Using = "//div[5]//div[2]//div[1]//div[2]//div[1]//input[1]")]
         private IWebElement OneOffServiceRadioButton { get; set; }
-        //Select the onoffserviceradiobutton
+        //HourlyServiceRadioButton
         [FindsBy(How = How.XPath, Using = "//div[5]//div[2]//div[1]//div[1]//div[1]//input[1]")]
         private IWebElement HourlyServiceRadioButton { get; set; }
-
+        //OnlineRadioButton
         //[FindsBy(How = How.Name, Using = "locationType")]
         [FindsBy(How = How.CssSelector, Using = "input[value='1'][name='locationType']")]
         private IWebElement OnlineRadioButton { get; set; }
-
+        //OnsiteRadioButton
         [FindsBy(How = How.CssSelector, Using = "input[value='0'][name='locationType']")]
         private IWebElement OnsiteRadioButton { get; set; }
 
-        //Click on Start Date dropdown
+
+        //Start Date dropdown
         [FindsBy(How = How.Name, Using = "startDate")]
         private IWebElement StartDateDropDown { get; set; }
 
-        //Click on End Date dropdown
+        //End Date dropdown
         [FindsBy(How = How.Name, Using = "endDate")]
         private IWebElement EndDateDropDown { get; set; }
-
+        //start date
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[2]/input")]
+        private IWebElement StartDate { get; set; }
+        //end date
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[4]/input")]
+        private IWebElement EndDate { get; set; }
         //Storing the table of available days
         [FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[@class='ui container']/div[@class='listing']/form[@class='ui form']/div[7]/div[2]/div[1]")]
+        //  private IWebElement Days { get; set; }
         private IWebElement Days { get; set; }
-
+        //day checkbox
+        [FindsBy(How = How.Name, Using = "Available")]
+       private IList<IWebElement > DayCheckbox{ get; set; }
+        
+        //Monday
+        
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[3]/div[1]/div/input")]
+        private IWebElement Monday { get; set; }
         //Storing the starttime
-        [FindsBy(How = How.XPath, Using = "//div[3]/div[2]/input[1]")]
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Start time' and @index='1']")]
         private IWebElement StartTime { get; set; }
-
-        //Click on StartTime dropdown
-        [FindsBy(How = How.XPath, Using = "//div[3]/div[2]/input[1]")]
+        //Storing the starttime
+        [FindsBy(How = How.Name, Using = "StartTime")]
+        private IList<IWebElement> StartTimeList { get; set; }
+        //Storing the endtime
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='End time' and @index='1']")]
+        private IWebElement EndTime { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[@class='twelve wide column']//div[2]//div[2]//input[1]")]
         private IWebElement StartTimeDropDown { get; set; }
 
         //Click on EndTime dropdown
@@ -108,7 +122,7 @@ namespace Mars_Competition_Task.Pages
         private IWebElement CreditRadioButton { get; set; }
 
         //Enter Skill Exchange
-        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[8]/div[4]/div/div/div/div/div/input")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-wrapper']//input[@placeholder='Add new tag']")]
         private IWebElement SkillExchange { get; set; }
 
         //Enter the amount for Credit
@@ -119,7 +133,7 @@ namespace Mars_Competition_Task.Pages
         [FindsBy(How = How.XPath, Using = "//form/div[10]/div[@class='twelve wide column']/div/div[@class = 'field']")]
         private IWebElement ActiveOption { get; set; }
         //Click on ActiveRadioButton option
-        [FindsBy(How = How.XPath, Using = "//body/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[10]/div[2]/div[1]/div[1]/div[1]/input[1]]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[10]/div[2]/div/div[1]/div/input")]
         private IWebElement ActiveRadioButton { get; set; }
         //Click on HiddenRadioButton option
         [FindsBy(How = How.XPath, Using = "//body/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[10]/div[2]/div[1]/div[2]/div[1]/input[1]")]
@@ -134,57 +148,120 @@ namespace Mars_Competition_Task.Pages
         private IWebElement MarketingTag { get; set; }
 
         //Click on Skill exchange Performance testing tag
-        [FindsBy(How = How.XPath, Using = "//body/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[8]/div[4]/div[1]/div[1]/div[1]/div[1]/span[1]")]
-        private IWebElement PerformancetestingTag { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id='service-listing-section']/div[2]/div/form/div[8]/div[4]/div/div/div/div/span")]
+        private IWebElement PerformanceTestingTag { get; set; }
 
 
         //Click on upload button
-        [FindsBy(How = How.Id, Using = "selectFile")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='service - listing - section']/div[2]/div/form/div[9]/div/div[2]/section/div/label/div/span/i")]
+        //[FindsBy(How = How.XPath, Using = "i[@class='huge plus circle icon padding-25']")]
         private IWebElement WorksampleIcon { get; set; }
 
+        //Click on Manage Listings Link
+        [FindsBy(How = How.LinkText, Using = "Manage Listings")]
+        private IWebElement manageListingsLink { get; set; }
 
-        public void clickShareskillbutton()
+        //sucess message save skill
+        //[FindsBy(How = How.XPath, Using = "//div[Contains(text(),'Service Listing Added Successfully)']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='ns-box-inner']")]
+        private IWebElement SaveSuccess { get; set; }
+
+        //1st Test case-user creates shareskill with single day
+        public void CreateShareSkill()
         {
-            MarsFramework.Global.GlobalDefinitions.wait(5);
-            ShareSkillButton.Click();
+            ClickShareskillbutton();
+            EnterTitle();
+            EnterDescription();
+            ClickOnCategory();
+            SelectCategory();
+            SelectSubCategory();
+            EnterTags();
+            SelectServiceType();
+            SelectLocationType();
+            EnterStartDate();
+            EnterEndDate();
+            SelectDay();
+            EnterStartTime();
+            EnterEndTime();
+            SelectSkillTrade();
+            EnterSkillExchange();
+            Active();
+            SaveSkills();
+        }
 
+        //user creates shareskill with Skill trade option as Creditradiobutton
+        public void CreateShareSkillWithCreditRadioButton()
+        {
+            ClickShareskillbutton();
+            EnterTitle();
+            EnterDescription();
+            ClickOnCategory();
+            SelectCategory();
+            SelectSubCategory();
+            EnterTags();
+            SelectServiceType();
+            SelectLocationType();
+            EnterStartDate();
+            EnterEndDate();
+            SelectDay();
+            EnterStartTime();
+            EnterEndTime();
+            SelectCredit();
+            EnterCredit();
+            Active();
+            SaveSkills();
+        }
+
+        //Adding skill in share skill page with group of days and time selected
+        public void CreateShareSkillWithGroupOfDaysSelected()
+        {
+            ClickShareskillbutton();
+            EnterTitle();
+            EnterDescription();
+            ClickOnCategory();
+            SelectCategory();
+            SelectSubCategory();
+            EnterTags();
+            SelectServiceType();
+            SelectLocationType();
+            EnterStartDate();
+            EnterEndDate();
+            SelectDays();
+            SelectTimeForMultipleDays();
+            SelectCredit();
+            EnterCredit();
+            Active();
+            SaveSkills();
+        }
+
+        public void ClickShareskillbutton()
+        {
+            GlobalDefinitions.ElementExists("Link Text", "Share Skill", 7);
+            ShareSkillButton.Click();
         }
 
         public void EnterTitle()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             string title = GlobalDefinitions.ExcelLib.ReadData(1, "Title");
-            Thread.Sleep(5000);
-            ShareSkillButton.Click();
-            //MarsFramework.Global.GlobalDefinitions.wait(3);
-            Thread.Sleep(5000);
+            GlobalDefinitions.ElementExists("XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input", 4);
             Title.SendKeys(title);
-            ////////Thread.Sleep(5000);
-            
-
         }
 
         public String TitleValidation()
         {
-            Thread.Sleep(5000);
-            String titletext = Title.Text;
-            Thread.Sleep(5000);
 
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + titletext);
-            return titletext;
-
-
-
+            GlobalDefinitions.ElementExists("XPath", "/html/body/div/div/div[1]/div[2]/div/form/div[1]/div/div[2]/div/div[1]/input", 4);
+            string value = Title.GetAttribute("value");
+            return value;
+          
         }
-
 
         public String ValidateAtShareSkillPage()
         {
             MarsFramework.Global.GlobalDefinitions.ElementExists("LinkText", "Share Skill", 5);
             String ShareSkillButtontext = ShareSkillButton.Text;
-
-
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + ShareSkillButtontext);
             return ShareSkillButtontext;
 
         }
@@ -192,13 +269,9 @@ namespace Mars_Competition_Task.Pages
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
 
-
             string description = GlobalDefinitions.ExcelLib.ReadData(1, "Description");
-            Thread.Sleep(5000);
-            ShareSkillButton.Click();
-            Thread.Sleep(3000);
+
             Description.SendKeys(description);
-            // MarsFramework.Global.GlobalDefinitions.wait(3);
 
 
         }
@@ -210,62 +283,251 @@ namespace Mars_Competition_Task.Pages
         }
         public void ClickOnCategory()
         {
-            Thread.Sleep(4000);
-            ShareSkillButton.Click();
-            Thread.Sleep(5000);
+            GlobalDefinitions.ElementExists("Name", "categoryId", 5);
             CategoryDropDown.Click();
-            Thread.Sleep(3000);
+
         }
 
-        public void ClickOnSubCategory()
-        {
-            //Thread.Sleep(4000);
-            //ShareSkillButton.Click();
-            Thread.Sleep(5000);
-            SubCategoryDropDown.Click();
-            Thread.Sleep(5000);
-        }
         public void SelectCategory()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             String categoryDropDownValue = GlobalDefinitions.ExcelLib.ReadData(1, "Category");
-           
-            var selectElement = new SelectElement(CategoryDropDown);
 
-            Thread.Sleep(5000);
+            var selectElement = new SelectElement(CategoryDropDown);
 
             selectElement.SelectByText(categoryDropDownValue);
 
-            Thread.Sleep(5000);
+
+        }
+
+        public String ValidateSelectCategory()
+        {
+            String text = Categoryvalue.Text;
+            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+            return text;
+
         }
 
         public void SelectSubCategory()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             String subCategoryDropDownValue = GlobalDefinitions.ExcelLib.ReadData(1, "Subcategory");
-            var selectElement = new SelectElement(SubCategoryDropDown);
-            Thread.Sleep(5000);
+            SubCategory.Click();
+            var selectElement = new SelectElement(SubCategory);
+
 
             selectElement.SelectByText(subCategoryDropDownValue);
-            Thread.Sleep(5000);
 
+        }
+        public string ValidateSelectSubCategory()
+        {
+            String text = SubCategoryvalue.Text;
+            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+            return text;
+        }
+        
+        public void EnterStartDate()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+
+            int addDaysToStartDate = Convert.ToInt32(GlobalDefinitions.ExcelLib.ReadData(1, "AddDaysInCurrentDateToStart"));
+            DateTime CurrentDate = DateTime.Now;
+            GlobalDefinitions.ElementExists("XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[2]/input", 4);
+            StartDate.Clear();
+            
+            string dateThen = CurrentDate.AddDays(addDaysToStartDate).ToString("dd/MM/yyyy");
+            Console.WriteLine("{{{{{{{{"+ dateThen +"}}}}}}");
+            StartDate.SendKeys(CurrentDate.AddDays(addDaysToStartDate).ToString("dd/MM/yyyy"));
+        }
+
+        public String ValidateStartDate()
+        {
+            
+            string value = StartDate.GetAttribute("value");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + value);
+            return value;
+        }
+        public void EnterEndDate()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            int addDaysToStartDate = Convert.ToInt32(GlobalDefinitions.ExcelLib.ReadData(1, "AddDaysInCurrentDateToStart"));
+            int addDaysToEndDate = Convert.ToInt32(GlobalDefinitions.ExcelLib.ReadData(1, "AddDaysInCurrentDateToEnd"));
+            DateTime CurrentDate = DateTime.Now;
+            GlobalDefinitions.ElementExists("XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[4]/input", 4);
+            EndDate.Clear();
+            if (addDaysToStartDate > addDaysToEndDate)
+            {
+                EndDate.SendKeys(CurrentDate.AddDays(addDaysToStartDate).ToString("dd/MM/yyyy"));
+            }
+            else
+            {
+                EndDate.SendKeys(CurrentDate.AddDays(addDaysToEndDate).ToString("dd/MM/yyyy"));
+            }
+        }
+
+
+        public String ValidateEndDate()
+        {
+            string value = EndDate.GetAttribute("value");
+            //String text = EndDate.Text;
+            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + value);
+            return value;
+        }
+
+
+        
+        public void SelectDay()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            String day = (GlobalDefinitions.ExcelLib.ReadData(2, "Selectday"));
+            
+            GlobalDefinitions.ElementExists("XPath", "//div[@class='twelve wide column']//div[3]//div[1]//div[1]//input[1]", 6);
+
+            Monday.Click();
+            GlobalDefinitions.ElementExists("XPath", "//div[@class='twelve wide column']//div[3]//div[1]//div[1]//input[1]", 6);
+
+
+
+        }
+
+        public void Daysgroup()
+        {
+            int day = DayCheckbox.Count;
+
+            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + day);
+
+        }
+
+        public bool ValidateSelectDay()
+        {
+            return Monday.Selected;
+        }
+
+
+        public void SelectDays()
+        {
+            //ClickShareskillbutton();
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            String days = (GlobalDefinitions.ExcelLib.ReadData(1, "Selectday"));
+
+            GlobalDefinitions.ElementExists("Name", "Available", 5);
+
+            
+            Console.WriteLine("DAY >>>>>>>>>>>>>>>" + days);
+            List<String> listOfDaysFromExcel = days.Split(',').ToList();
+            Console.WriteLine("listOfDays >>>>>>>>>>>" + listOfDaysFromExcel);
+
+            var daysToIndexMap = new Dictionary<string, string>();
+            daysToIndexMap.Add("Sun","0");
+            daysToIndexMap.Add("Mon", "1");
+            daysToIndexMap.Add("Tue", "2");
+            daysToIndexMap.Add("Wed", "3");
+            daysToIndexMap.Add("Thu", "4");
+            daysToIndexMap.Add("Fri", "5");
+            daysToIndexMap.Add("Sat", "6");
+
+            foreach (String day in listOfDaysFromExcel)
+            {
+                Console.WriteLine("day >>>>>>>>>>>" + day);                
+                string indexValue = daysToIndexMap.GetValueOrDefault(day);//retrieve index value corresponding to day from excel test data.
+                IWebElement dayToSelect = findWebElementUsingAttribute(DayCheckbox, "index", indexValue);
+                dayToSelect?.Click();
+                Thread.Sleep(3000);
+            }
+
+        }
+
+        private static IWebElement findWebElementUsingAttribute(IList<IWebElement> webElementList, String attributeName, String attributeValue)
+        {
+            foreach (IWebElement webElement in webElementList)
+            {
+                if (webElement.GetAttribute(attributeName).Equals(attributeValue))
+                {
+                    Console.WriteLine("webElement found for index : "+ attributeValue);
+                    return webElement;
+                }
+            }
+            return null;
+        }
+
+
+        public void SelectTimeForMultipleDays()
+        {
+           // ClickShareskillbutton();
+
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            String days = (GlobalDefinitions.ExcelLib.ReadData(1, "Selectday"));
+            GlobalDefinitions.ElementExists("Name", "Available", 5);
+            List<String> listOfDaysFromExcel = days.Split(',').ToList();
+            String StartTimeMultiple = (GlobalDefinitions.ExcelLib.ReadData(1, "Starttime"));
+            List<String> listOfTimeFromExcel = StartTimeMultiple.Split(',').ToList();
+            var daysToIndexMap = new Dictionary<string, string>();
+            daysToIndexMap.Add("Sun", "0");
+            daysToIndexMap.Add("Mon", "1");
+            daysToIndexMap.Add("Tue", "2");
+            daysToIndexMap.Add("Wed", "3");
+            daysToIndexMap.Add("Thu", "4");
+            daysToIndexMap.Add("Fri", "5");
+            daysToIndexMap.Add("Sat", "6");
+            Console.WriteLine("listOftime count >>>>>>>>>>>" + listOfTimeFromExcel.Count);
+            foreach (String day in listOfDaysFromExcel)
+            {
+                Console.WriteLine("day >>>>>>>>>>>" + day);
+                string indexValue = daysToIndexMap.GetValueOrDefault(day);//retrieve index value corresponding to day from excel test data.
+                IWebElement startTimeToSelect = findWebElementUsingAttribute(StartTimeList, "index", indexValue);
+                startTimeToSelect?.SendKeys(listOfTimeFromExcel[listOfDaysFromExcel.IndexOf(day)]);
+                Thread.Sleep(3000);
+            }
+            
+
+        }
+
+       
+        public void EnterStartTime()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            String startTime = GlobalDefinitions.ExcelLib.ReadData(1, "Starttime");
+            Console.WriteLine("Start Time Value Before:" + StartTime.GetAttribute("value"));
+            StartTime.SendKeys(startTime);            
+        }
+
+        public String ValidateStartTime()
+        {
+            GlobalDefinitions.ElementExists("XPath", "//input[@placeholder='Start time' and @index='1']", 4);
+            string value = StartTime.GetAttribute("value");
+            Console.WriteLine("Start Time Value After:" + value);
+            return value;
+        }
+        public void EnterEndTime()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            String endTime = GlobalDefinitions.ExcelLib.ReadData(1, "Endtime");
+            EndTime.SendKeys(endTime);
+
+        }
+
+        public String ValidateEndTime()
+        {
+            string value = EndTime.GetAttribute("value");
+            Console.WriteLine("EndTime Value After:" + value);
+            return value;
         }
 
         public void SaveSkills()
         {
-            Thread.Sleep(3000);
-            ShareSkillButton.Click();
-            Thread.Sleep(5000);
+            GlobalDefinitions.ElementExists("XPath", "//input[@value='Save']", 6);
             Save.Click();
-            Thread.Sleep(8000);
+            Thread.Sleep(5000);
+            
         }
 
+       
         public bool ValidateSkillTradeSkillExchangeRadioButton()
         {
             return SkillExchangeRadiobutton.Selected;
         }
 
-        
+
 
         public String ValidateSkillTrade()
         {
@@ -277,20 +539,16 @@ namespace Mars_Competition_Task.Pages
         public String ValidateDescriptionEditting()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(4000);
-            ShareSkillButton.Click();
-
-
+           
 
             string description = GlobalDefinitions.ExcelLib.ReadData(2, "Description");
-            Thread.Sleep(4000);
+            GlobalDefinitions.ElementExists("XPath", "//textarea[@placeholder='Please tell us about any hobbies, additional expertise, or anything else you’d like to add.']", 4);
+            Description.Clear();
             Description.SendKeys(description);
 
             String text = Description.Text;
             Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
             return text;
-
-
 
         }
 
@@ -300,58 +558,50 @@ namespace Mars_Competition_Task.Pages
         {
             //Description is editted in skill
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(5000);
+            GlobalDefinitions.ElementExists("XPath", "//textarea[@placeholder='Please tell us about any hobbies, additional expertise, or anything else you’d like to add.']", 4);
             Description.Clear();
             string description = GlobalDefinitions.ExcelLib.ReadData(2, "Description");
-            MarsFramework.Global.GlobalDefinitions.wait(4);
             Description.SendKeys(description);
-            // Thread.Sleep(1000);
-            // Save.Click();
+            
 
         }
 
-        public string DescriptionEdittedText()
+       public void FileUpload()
         {
-            String DescriptionEdittedText = Description.Text;
-            return DescriptionEdittedText;
-        }
-
-
-        public void FileUpload()
-        {
-            AutoItX3 autoIt = new AutoItX3();
+            Thread.Sleep(5000);
             WorksampleIcon.Click();
+            AutoItX3 autoIt = new AutoItX3();
+            Thread.Sleep(2000);
+            
+            //Thread.Sleep(3000);
             autoIt.WinActivate("Open");
             autoIt.Send(@"C:\Users\nirur\Desktop\san\bugfile.png");
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             autoIt.Send("{Enter}");
-
-
-
 
         }
 
+        public void CloseDriver()
+        {
+            GlobalDefinitions.driver.Close();
+        }
 
         public void SelectLocationType()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(6000);
-            ShareSkillButton.Click();
-            //Global.GlobalDefinitions.wait(15);
 
             string locationTypeOption = GlobalDefinitions.ExcelLib.ReadData(1, "LocationType");
 
             if (locationTypeOption == "On-site")
             {
-                Thread.Sleep(3000);
 
                 OnsiteRadioButton.Click();
-                //Thread.Sleep(8000);
+
             }
 
             else
             {
-                Thread.Sleep(3000);
+
                 OnlineRadioButton.Click();
 
             }
@@ -360,29 +610,22 @@ namespace Mars_Competition_Task.Pages
         public bool validateOnsiteRadiobuttonSelected()
         {
             return OnsiteRadioButton.Selected;
-            //Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + OnsiteRadioButton);
 
         }
-
-    
 
         public void SelectServiceType()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(6000);
-            ShareSkillButton.Click();
-            //Global.GlobalDefinitions.wait(15);
-
             string ServiceTypeOption = GlobalDefinitions.ExcelLib.ReadData(1, "ServiceType");
             if (ServiceTypeOption == "One-off service")
             {
                 OneOffServiceRadioButton.Click();
-                Thread.Sleep(3000);
+
             }
 
             else
             {
-                Thread.Sleep(3000);
+
                 HourlyServiceRadioButton.Click();
 
             }
@@ -392,18 +635,20 @@ namespace Mars_Competition_Task.Pages
         {   //oneoffserviceradiobuttonisselected
             return OneOffServiceRadioButton.Selected;
         }
-        
 
+        public bool validateMondayCheckBoxIsChecked()
+        {
+            return Monday.Selected;
+           
+        }
 
         public void EnterTags()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             String tag = GlobalDefinitions.ExcelLib.ReadData(1, "Tag");
-            Thread.Sleep(5000);
-            ShareSkillButton.Click();
             Tags.SendKeys(tag);
             Tags.SendKeys(Keys.Enter);
-            Thread.Sleep(3000);
+           
 
         }
 
@@ -418,30 +663,46 @@ namespace Mars_Competition_Task.Pages
             //selecting skill exchange
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             String skillExchangeValue = GlobalDefinitions.ExcelLib.ReadData(1, "Skill-Exchange");
-            Thread.Sleep(5000);
-            ShareSkillButton.Click();
             SkillExchange.SendKeys(skillExchangeValue);
             SkillExchange.SendKeys(Keys.Enter);
-            Thread.Sleep(5000);
+
 
         }
 
         public String ValidateSkillExchangeIsAdded()
         {
-            String text = PerformancetestingTag.Text;
+            String text = PerformanceTestingTag.Text;
             Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
             return text;
         }
+
+        //selecting skill exchange radiobutton in skill trade
         public void SelectSkillTrade()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(5000);
-            ShareSkillButton.Click();
+
+
             string skilltrade = GlobalDefinitions.ExcelLib.ReadData(1, "SkillTrade");
-            if (skilltrade== "Skill-Exchange")
+            if (skilltrade == "Skill-Exchange")
             {
                 SkillExchangeRadiobutton.Click();
-                Thread.Sleep(3000);
+
+
+            }
+            else
+            {
+                CreditRadioButton.Click();
+            }
+        }
+        //selecting credit radiobutton in skill trade
+        public void SelectCredit()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            string skilltrade = GlobalDefinitions.ExcelLib.ReadData(1, "Credit");
+            if (skilltrade == "Skill-Exchange")
+            {
+                SkillExchangeRadiobutton.Click();
+
 
             }
             else
@@ -450,10 +711,18 @@ namespace Mars_Competition_Task.Pages
             }
         }
 
+        public void EnterCredit()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            string creditAmount = GlobalDefinitions.ExcelLib.ReadData(1, "Creditvalue");
+            CreditAmount.Clear();
+            CreditAmount.SendKeys(creditAmount);
+        }
 
         public bool SelectSkillTradeValidation()
         {
             return SkillExchangeRadiobutton.Selected;
+
         }
 
 
@@ -461,40 +730,64 @@ namespace Mars_Competition_Task.Pages
         public void Active()
         {
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
-            Thread.Sleep(6000);
-            ShareSkillButton.Click();
-            //Global.GlobalDefinitions.wait(15);
+       
 
             string activeStatus = GlobalDefinitions.ExcelLib.ReadData(1, "Active");
-            if (activeStatus == "Hidden")
+            if (activeStatus == "Active")
             {
-                HiddenRadioButton.Click();
+                GlobalDefinitions.ElementExists("XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[10]/div[2]/div/div[1]/div/input", 6);
+                ActiveRadioButton.Click();
 
-                Thread.Sleep(3000);
+
             }
 
             else
             {
-                ActiveRadioButton.Click();
-                Thread.Sleep(3000);
+                HiddenRadioButton.Click();
+
             }
-      
+
         }
-       
+
         public bool ValidateActive()
         {
-            return HiddenRadioButton.Selected;
+            return ActiveRadioButton.Selected;
+        }
+
+        public void NavigateToManageListPage()
+        {
+            manageListingsLink.Click();
         }
 
 
-        
+        public void NavigateToShareSkillPage()
+        {
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+            string url = GlobalDefinitions.ExcelLib.ReadData(1, "url");
+            GlobalDefinitions.driver.Navigate().GoToUrl(url);
 
+
+        }
+
+        public String ValidateSaveSkills()
+        {
+            //Thread.Sleep(5000);
+            // GlobalDefinitions.ElementExists("XPath", "//div[Contains(text(),'Service Listing Added Successfully)']", 6);
+            String saveSuccessText = SaveSuccess.Text;
+            GlobalDefinitions.ElementExists("XPath", "//div[Contains(text(),'Service Listing Added Successfully)']", 6);
+            //Thread.Sleep(5000);
+            Console.WriteLine("SAVE SUCCESS TEXT >>>>>>>>>>>>>>>>>>>>" + saveSuccessText);
+            return saveSuccessText;
+        }
 
     }
+}
+
+
    
 
 
-}
+
 
 
 

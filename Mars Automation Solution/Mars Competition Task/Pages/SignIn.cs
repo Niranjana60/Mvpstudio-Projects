@@ -1,7 +1,7 @@
 ﻿using MarsFramework.Global;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-
+using System.Threading;
 
 namespace Mars_Competition_Task.Pages
 {
@@ -33,6 +33,12 @@ namespace Mars_Competition_Task.Pages
         [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Login')]")]
         private IWebElement LoginBtn { get; set; }
 
+        //Click on ShareSkill Button
+        [FindsBy(How = How.LinkText, Using = "Share Skill")]
+        private IWebElement ShareSkillButton { get; set; }
+
+
+
         #endregion
 
         public void LoginSteps()
@@ -44,17 +50,15 @@ namespace Mars_Competition_Task.Pages
 
             MarsFramework.Global.GlobalDefinitions.driver.Navigate().GoToUrl(url);
 
-            //MarsFramework.Global.GlobalDefinitions.wait(1);
-            
             SignIntab.Click();
-            //MarsFramework.Global.GlobalDefinitions.wait(3);
             Email.SendKeys(email);
-           // MarsFramework.Global.GlobalDefinitions.wait(3);
             Password.SendKeys(password);
             LoginBtn.Click();
+            Thread.Sleep(4000);
+           
 
         }
-        //Validating if logged in successfully
+       
        
 
         }

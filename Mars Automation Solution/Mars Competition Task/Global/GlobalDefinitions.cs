@@ -18,7 +18,7 @@ namespace MarsFramework.Global
 
         #region WaitforElement 
 
-        public static void wait(int time)
+        public static void Wait(int time)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(time);
 
@@ -54,6 +54,12 @@ namespace MarsFramework.Global
                     wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.LinkText(locatorValue)));
                 }
 
+                if (locator == "Name")
+                {
+                    Console.WriteLine(">>>>>>>>>> Adding Wait");
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Name(locatorValue)));
+                }
 
 
             }
