@@ -2,6 +2,7 @@
 using Mars_Competition_Task.Pages;
 using MarsFramework.Pages;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 //using RelevantCodes.ExtentReports;
@@ -70,21 +71,23 @@ namespace MarsFramework.Global
         [TearDown]
         public void TearDown()
         {
-            /*// Screenshot
-            String img = SaveScreenShotClass.SaveScreenshot(GlobalDefinitions.driver, "Report");//AddScreenCapture(@"E:\Dropbox\VisualStudio\Projects\Beehive\TestReports\ScreenShots\");
-            test.Log(LogStatus.Info, "Image example: " + img);
-            // end test. (Reports)
-            extent.EndTest(test);
-            / calling Flush writes everything to the log file (Reports)
-            extent.Flush();*/
 
-            // Close the driver :)            
-            GlobalDefinitions.driver.Close();
+            var status = TestContext.CurrentContext.Result.Outcome.Status;
+            var testName = TestContext.CurrentContext.Test.Name;
+           
+            if (status == TestStatus.Failed)
+            {
+                string screenShotPath = GlobalDefinitions.ScreenCapture(GlobalDefinitions.driver, testName);
+                
+            }
+                
+                // Close the driver :)            
+                GlobalDefinitions.driver.Close();
             //GlobalDefinitions.driver.Quit();
             //}
             #endregion
 
-            ////}
+           
         }
     }
 }

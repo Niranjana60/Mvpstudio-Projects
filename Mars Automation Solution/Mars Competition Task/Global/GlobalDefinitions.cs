@@ -1,10 +1,12 @@
-﻿using ExcelDataReader;
+﻿using AventStack.ExtentReports;
+using ExcelDataReader;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -178,27 +180,15 @@ namespace MarsFramework.Global
         #endregion
 
         #region screenshots
-        public class SaveScreenShotClass
+        
+        public static string ScreenCapture(IWebDriver driver, string screenShotName)
         {
-            public static string SaveScreenshot(IWebDriver driver, string ScreenShotFileName) // Definition
-            {
-                var folderLocation = (Base.ScreenshotPath);
-
-                if (!System.IO.Directory.Exists(folderLocation))
-                {
-                    System.IO.Directory.CreateDirectory(folderLocation);
-                }
-
-                var screenShot = ((ITakesScreenshot)driver).GetScreenshot();
-                var fileName = new StringBuilder(folderLocation);
-
-                fileName.Append(ScreenShotFileName);
-                fileName.Append(DateTime.Now.ToString("_dd-mm-yyyy_mss"));
-                //fileName.Append(DateTime.Now.ToString("dd-mm-yyyym_ss"));
-                fileName.Append(".jpeg");
-                screenShot.SaveAsFile(fileName.ToString(), ScreenshotImageFormat.Jpeg);
-                return fileName.ToString();
-            }
+            ITakesScreenshot ts = (ITakesScreenshot)driver;
+            Screenshot screenshot = ts.GetScreenshot();
+            string screenShotPath = @"D:\mvpstudio\vscode\repos\mvpstudio\Mars Automation Solution\Mars Competition Task\Extent Reports\ErrorScreenshots\"+ screenShotName + ".png";
+            //string localpath = new Uri(finalpth).LocalPath;
+            screenshot.SaveAsFile(screenShotPath, ScreenshotImageFormat.Png);
+            return screenShotPath;
         }
         #endregion
     }

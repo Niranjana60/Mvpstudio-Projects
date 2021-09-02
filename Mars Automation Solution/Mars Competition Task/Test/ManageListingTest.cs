@@ -11,7 +11,7 @@ namespace Mars_Competition_Task.Test
     [TestFixture]
     class ManageListingTest : MarsFramework.Global.Base
     {
-        [Test]
+        [Test,Order(1)]
         //1st Test case:View Manage Listing Details
         public void ViewManageListing()
         {
@@ -24,7 +24,7 @@ namespace Mars_Competition_Task.Test
             Assert.AreEqual("Chat", text);
         }
 
-        [Test]
+        [Test,Order(2)]
         // 2nd Test :Edit Manage Listing Details
         public void EditManageListings()
         {
@@ -40,7 +40,7 @@ namespace Mars_Competition_Task.Test
            
         }
 
-        [Test]
+        [Test, Order(3)]
         public void ValidateEditManageListings()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -51,7 +51,7 @@ namespace Mars_Competition_Task.Test
         }
 
         //3rd Test case-Delete Manage Listing
-        [Test]
+        [Test, Order(4)] 
         public void DeleteManageListings()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -64,7 +64,7 @@ namespace Mars_Competition_Task.Test
 
         }
 
-        [Test]
+        [Test, Order(5)]
         public void ValidateCategoryValue()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -73,7 +73,7 @@ namespace Mars_Competition_Task.Test
             Assert.AreEqual("Graphics & Design", text);
         }
 
-        [Test]
+        [Test, Order(6)]
         public void ValidateTitleValue()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -83,18 +83,18 @@ namespace Mars_Competition_Task.Test
 
         }
 
-        [Test]
+        [Test, Order(7)]
         public void ValidateDescriptionValue()
         {
             ManageListingPage obj = new ManageListingPage();
             obj.ClickOnManageListingsLink();
             String text = obj.ValidateDescriptionValue();
 
-            Assert.AreEqual("Description editted", text);
+            Assert.AreEqual("cccc cccc", text);
 
         }
 
-        [Test]
+        [Test,Order(8)]
         public void ValidateServiceTypeValue()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -106,7 +106,7 @@ namespace Mars_Competition_Task.Test
 
         }
 
-        [Test]
+        [Test, Order(9)]
         public void ValidateSkillTradeBlueCircleIsEnabled()
         {
             ManageListingPage obj = new ManageListingPage();
@@ -118,7 +118,7 @@ namespace Mars_Competition_Task.Test
 
         }
 
-        [Test]
+        [Test, Order(10)]
         public void ValidateActiveRadioButtonIsEnabled()
         {
             ManageListingPage obj = new ManageListingPage();

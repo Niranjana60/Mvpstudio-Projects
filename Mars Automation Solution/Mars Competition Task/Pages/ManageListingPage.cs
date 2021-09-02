@@ -133,8 +133,8 @@ namespace Mars_Competition_Task.Pages
 
         public String ValidateDescriptionValue()
         {
-             GlobalDefinitions.ElementExists("XPath", "//td[normalize-space()='Description editted']", 5);
-            //Thread.Sleep(9000);
+            // GlobalDefinitions.ElementExists("XPath", "//td[normalize-space()='Description editted']", 6);
+            Thread.Sleep(9000);
             String descriptionvalue = DescriptionValue.Text;
             Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + descriptionvalue);
             return descriptionvalue;

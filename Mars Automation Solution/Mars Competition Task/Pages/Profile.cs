@@ -24,11 +24,6 @@ namespace Mars_Competition_Task.Pages
         public IWebElement Profiletab { get; set; }
         
 
-
-
-        
-
-
         //Validating if logged in successfully
         public bool ValidateLogin()
         {

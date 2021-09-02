@@ -21,30 +21,35 @@ namespace MarsFramework
             public void CreateShareSkills()
             {
 
-                test = rep.CreateTest(TestContext.CurrentContext.Test.Name).Info("Test started");
-                test.Log(Status.Info, "Starting the ShareSkillPageTest");
+                    test = rep.CreateTest(TestContext.CurrentContext.Test.Name).Info("Test started");
+                    test.Log(Status.Info, "Starting the ShareSkillPageTest");
 
-                test.Log(Status.Pass, "test passed");
-               
-                ShareSkillPage obj = new ShareSkillPage();
-                obj.CreateShareSkill();
-                rep.Flush();
-            }
+                    
+
+                    ShareSkillPage obj = new ShareSkillPage();
+                    obj.CreateShareSkill();
+                    test.Log(Status.Pass, "test passed");
+                    rep.Flush();
+
+                }
 
             [Test]
 
             public void CreateShareSkillsWithSkillTradeOptionAsCredit()
             {
-                ShareSkillPage obj = new ShareSkillPage();
+                    test = rep.CreateTest(TestContext.CurrentContext.Test.Name).Info("Test started");
+                    test.Log(Status.Info, "Starting the ShareSkillPageTestWithCreditRadioButton");
+                    ShareSkillPage obj = new ShareSkillPage();
 
-                obj.CreateShareSkillWithCreditRadioButton();
+                    obj.CreateShareSkillWithCreditRadioButton();
+                    test.Log(Status.Pass, "test passed");
+                    rep.Flush();
             }
 
             [Test]
             public void CreateShareSkillsWithGroupOfDays()
             {
                 ShareSkillPage obj = new ShareSkillPage();
-                //obj.CreateShareSkillWithGroupOfDaysSelected();
                 obj.CreateShareSkillWithGroupOfDaysSelected();
             }
 

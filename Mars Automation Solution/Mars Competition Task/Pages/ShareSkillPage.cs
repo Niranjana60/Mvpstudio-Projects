@@ -237,7 +237,7 @@ namespace Mars_Competition_Task.Pages
 
         public void ClickShareskillbutton()
         {
-            GlobalDefinitions.ElementExists("Link Text", "Share Skill", 7);
+            GlobalDefinitions.ElementExists("Link Text", "Share Skills", 7);
             ShareSkillButton.Click();
         }
 
@@ -278,7 +278,7 @@ namespace Mars_Competition_Task.Pages
         public String ValidateDescription()
         {
             String text = Description.Text;
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+            
             return text;
         }
         public void ClickOnCategory()
@@ -322,7 +322,7 @@ namespace Mars_Competition_Task.Pages
         public string ValidateSelectSubCategory()
         {
             String text = SubCategoryvalue.Text;
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+           
             return text;
         }
         
@@ -336,7 +336,7 @@ namespace Mars_Competition_Task.Pages
             StartDate.Clear();
             
             string dateThen = CurrentDate.AddDays(addDaysToStartDate).ToString("dd/MM/yyyy");
-            Console.WriteLine("{{{{{{{{"+ dateThen +"}}}}}}");
+            
             StartDate.SendKeys(CurrentDate.AddDays(addDaysToStartDate).ToString("dd/MM/yyyy"));
         }
 
@@ -344,7 +344,7 @@ namespace Mars_Competition_Task.Pages
         {
             
             string value = StartDate.GetAttribute("value");
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + value);
+            
             return value;
         }
         public void EnterEndDate()
@@ -369,8 +369,6 @@ namespace Mars_Competition_Task.Pages
         public String ValidateEndDate()
         {
             string value = EndDate.GetAttribute("value");
-            //String text = EndDate.Text;
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + value);
             return value;
         }
 
@@ -393,8 +391,7 @@ namespace Mars_Competition_Task.Pages
         public void Daysgroup()
         {
             int day = DayCheckbox.Count;
-
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + day);
+  
 
         }
 
@@ -406,7 +403,7 @@ namespace Mars_Competition_Task.Pages
 
         public void SelectDays()
         {
-            //ClickShareskillbutton();
+           
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
             String days = (GlobalDefinitions.ExcelLib.ReadData(1, "Selectday"));
 
@@ -432,7 +429,7 @@ namespace Mars_Competition_Task.Pages
                 string indexValue = daysToIndexMap.GetValueOrDefault(day);//retrieve index value corresponding to day from excel test data.
                 IWebElement dayToSelect = findWebElementUsingAttribute(DayCheckbox, "index", indexValue);
                 dayToSelect?.Click();
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
             }
 
         }
@@ -476,7 +473,7 @@ namespace Mars_Competition_Task.Pages
                 string indexValue = daysToIndexMap.GetValueOrDefault(day);//retrieve index value corresponding to day from excel test data.
                 IWebElement startTimeToSelect = findWebElementUsingAttribute(StartTimeList, "index", indexValue);
                 startTimeToSelect?.SendKeys(listOfTimeFromExcel[listOfDaysFromExcel.IndexOf(day)]);
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
             }
             
 
@@ -533,7 +530,7 @@ namespace Mars_Competition_Task.Pages
         {
             //skill exchange is selected
             String text = Description.Text;
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+            
             return text;
         }
         public String ValidateDescriptionEditting()
@@ -547,7 +544,7 @@ namespace Mars_Competition_Task.Pages
             Description.SendKeys(description);
 
             String text = Description.Text;
-            Console.WriteLine("AAAAAAAAAAAAAAAAAA************************" + text);
+            
             return text;
 
         }
@@ -771,12 +768,10 @@ namespace Mars_Competition_Task.Pages
 
         public String ValidateSaveSkills()
         {
-            //Thread.Sleep(5000);
-            // GlobalDefinitions.ElementExists("XPath", "//div[Contains(text(),'Service Listing Added Successfully)']", 6);
+            
             String saveSuccessText = SaveSuccess.Text;
             GlobalDefinitions.ElementExists("XPath", "//div[Contains(text(),'Service Listing Added Successfully)']", 6);
-            //Thread.Sleep(5000);
-            Console.WriteLine("SAVE SUCCESS TEXT >>>>>>>>>>>>>>>>>>>>" + saveSuccessText);
+            
             return saveSuccessText;
         }
 
