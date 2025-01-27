@@ -7,7 +7,6 @@ We used docker to test the development version of the app and it's a white-label
 Task 1:
 ● Create your own account on Mars website(via docker). 
 ● Play around with the application and start writing the test conditions and cases for Home -> ‘Share Skill’ and ‘Manage Listings’. 
-Please follow the test case template in this link.
 Submit the project for feedback
 
 Task 2:
