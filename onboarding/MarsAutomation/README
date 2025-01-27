@@ -1,1 +1,24 @@
+This is the Onboarding task submitted to Mvpstudio as part of Onboarding.
+Project Mars is an online trading platform for skills. Users can trade their skills and guests can search for skills to exchange. 
+This platform provides the toolset to manage appointments as well as a smart rating and feedback mechanism to give insight to new users.
+We used docker to test the development version of the app and it's a white-label skill trading marketplace platform.
+
+Test User Story:
+Feature:  Seller🡪Add Profile Details
+Priority: Major
+As a Seller
+I want the feature to add my Profile Details
+So that
+The people seeking for some skills can look into my details.
+
+Acceptance Criteria
+●	Seller is able to add the Profile Details.
+●	Seller is able to see the seller’s details on the Profile page. 
+
+The task consists of two versions:
+Task 1: For the above User story, Follow BDD and write all the possible test cases on the Specflow Feature file. 
+Task 2: Identify any 3 complex test cases from feature file and automate them.
+
+
+
 
