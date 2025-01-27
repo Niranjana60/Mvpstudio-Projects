@@ -1,4 +1,8 @@
 This is a Automation project which was done to automate certain features for the Mars application in MVP studio.
+Project Mars is an online trading platform for skills. Users can trade their skills and guests can search for skills to exchange. 
+This platform provides the toolset to manage appointments as well as a smart rating and feedback mechanism to give insight to new users.
+We used docker to test the development version of the app and it's a white-label skill trading marketplace platform.
+
 
 Task 1:
 ● Create your own account on Mars website(via docker). 
@@ -7,7 +11,7 @@ Please follow the test case template in this link.
 Submit the project for feedback
 
 Task 2:
-●	Automate any 3 complex test cases from Share Skills and Manage Listing modules. 
+●	Automate test cases from Share Skills and Manage Listing modules. 
 
 Technical Tasks
 • Automation with Selenium Web Driver using C#.
