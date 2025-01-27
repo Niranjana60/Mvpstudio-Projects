@@ -1,1 +1,16 @@
+This is a Automation project which was done to automate certain features for the Mars application in MVP studio.
+
+Task 1:
+● Create your own account on Mars website(via docker). 
+● Play around with the application and start writing the test conditions and cases for Home -> ‘Share Skill’ and ‘Manage Listings’. 
+Please follow the test case template in this link.
+Submit the project for feedback
+
+Task 2:
+●	Automate any 3 complex test cases from Share Skills and Manage Listing modules. 
+
+Technical Tasks
+• Automation with Selenium Web Driver using C#.
+• POM, Page Factory, Data-driven approach, NUnit, Extent Reports, Excel Data Reader and Asserts.
+
 
